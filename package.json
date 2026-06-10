@@ -1,0 +1,17 @@
+{
+  "name": "bluebonnet-legacy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static public site for Bluebonnet Legacy.",
+  "scripts": {
+    "dev": "python3 -m http.server 5174",
+    "serve": "python3 -m http.server 5174"
+  },
+  "keywords": [
+    "bluebonnet-legacy",
+    "operational-transformation",
+    "legacy-business",
+    "private-equity"
+  ],
+  "license": "UNLICENSED"
+}

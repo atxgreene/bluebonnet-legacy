@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+    
+    
+    <g transform="translate(252.0,336.0)">
+      <rect x="-7" y="88" width="14" height="125" rx="7" fill="#4B6642" />
+      <path d="M -120 115 C -78 72, -22 72, -8 130 C -58 154, -95 146, -120 115 Z" fill="#4B6642" /><path d="M 120 115 C 78 72, 22 72, 8 130 C 58 154, 95 146, 120 115 Z" fill="#4B6642" />
+      <ellipse cx="0" cy="-170" rx="38" ry="54" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="0" cy="-120" rx="48" ry="64" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="-32" cy="-78" rx="42" ry="56" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="32" cy="-78" rx="42" ry="56" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="0" cy="-44" rx="54" ry="74" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="-48" cy="10" rx="50" ry="70" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="48" cy="10" rx="50" ry="70" fill="#214D8C" stroke="white" stroke-width="5"/><ellipse cx="0" cy="52" rx="60" ry="82" fill="#0A2A43" stroke="white" stroke-width="5"/>
+    </g>
+    
+    
+            <g transform="translate(476.00000000000006,336.0)" fill="#0A2A43">
+              <text y="0" x="0" font-family="Georgia, Times New Roman, serif" font-size="74" font-weight="700" letter-spacing="7">BLUEBONNET</text>
+              <line x1="5" y1="34" x2="165" y2="34" stroke="#0A2A43" stroke-width="2" opacity="0.45"/>
+              <line x1="255" y1="34" x2="415" y2="34" stroke="#0A2A43" stroke-width="2" opacity="0.45"/>
+              <text y="62" x="210" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-size="34" font-weight="700" letter-spacing="5">LEGACY</text>
+            </g>
+            
+    </svg>
