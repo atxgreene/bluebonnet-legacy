@@ -3,16 +3,16 @@
   <desc id="desc">A stylized bluebonnet flower with green leaves.</desc>
   <defs>
     <linearGradient id="petal" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#1C456B"/>
-      <stop offset="1" stop-color="#0D2740"/>
+      <stop offset="0" stop-color="#2E4666"/>
+      <stop offset="1" stop-color="#24354D"/>
     </linearGradient>
     <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#66805A"/>
-      <stop offset="1" stop-color="#3E563E"/>
+      <stop offset="0" stop-color="#647F5B"/>
+      <stop offset="1" stop-color="#566F4F"/>
     </linearGradient>
   </defs>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M110 88 C107 118 106 154 110 194" stroke="#3E563E" stroke-width="9"/>
+    <path d="M110 88 C107 118 106 154 110 194" stroke="#45593F" stroke-width="9"/>
     <path d="M106 148 C72 116 34 113 14 132 C45 147 77 154 106 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
     <path d="M114 148 C148 116 186 113 206 132 C175 147 143 154 114 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
     <path d="M110 16 C92 34 92 53 110 70 C128 53 128 34 110 16Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
