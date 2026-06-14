@@ -6,6 +6,7 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 
 - `index.html` - public homepage rebuilt from the Bluebonnet homepage mockup.
 - `diagnostic.html` - Legacy Alignment Diagnostic one-pager from the Bluebonnet asset pack.
+- `brand.html` - compact production brand system for colors, typography, spacing, logo usage, and framework language.
 
 ## Source Assets
 
@@ -13,6 +14,14 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 - `assets/asset-pack/brand_palette.png` - visual palette reference.
 - `assets/asset-pack/logo_crops/` - extracted logo raster assets.
 - `assets/asset-pack/panel_crops/` - extracted board and document panel assets.
+- `assets/bluebonnet-mark.svg` - simplified production vector mark for small-format use.
+- `assets/bluebonnet-wordmark.svg` - simplified production vector wordmark for web use.
+
+## Production Notes
+
+- Public architecture uses Bluebonnet Legacy. Bluebonnet Capital and Bluebonnet Holdings are reserved for formal entities or service lines.
+- Framework language is standardized around Financial Clarity, Operational Structure, Incentive Alignment, Leadership Rhythm, Process Engineering, Technology Leverage, Reporting Architecture, and Capital Efficiency.
+- Raster source crops remain in `assets/asset-pack/` for reference. Use SVG assets for active web marks.
 
 ## Local Preview
 
