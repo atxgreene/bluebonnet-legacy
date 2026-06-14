@@ -3,24 +3,24 @@
   <desc id="desc">A stylized bluebonnet flower with green leaves.</desc>
   <defs>
     <linearGradient id="petal" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#2E4666"/>
-      <stop offset="1" stop-color="#24354D"/>
+      <stop offset="0" stop-color="#1F4E79"/>
+      <stop offset="1" stop-color="#10263D"/>
     </linearGradient>
     <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0" stop-color="#647F5B"/>
-      <stop offset="1" stop-color="#566F4F"/>
+      <stop offset="0" stop-color="#6E8557"/>
+      <stop offset="1" stop-color="#566B47"/>
     </linearGradient>
   </defs>
   <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M110 88 C107 118 106 154 110 194" stroke="#45593F" stroke-width="9"/>
-    <path d="M106 148 C72 116 34 113 14 132 C45 147 77 154 106 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
-    <path d="M114 148 C148 116 186 113 206 132 C175 147 143 154 114 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
-    <path d="M110 16 C92 34 92 53 110 70 C128 53 128 34 110 16Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M78 42 C63 62 66 82 88 93 C100 71 97 54 78 42Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M142 42 C157 62 154 82 132 93 C120 71 123 54 142 42Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M110 62 C91 82 92 105 110 122 C128 105 129 82 110 62Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M66 78 C46 95 48 119 75 132 C93 108 88 90 66 78Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M154 78 C174 95 172 119 145 132 C127 108 132 90 154 78Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
-    <path d="M110 112 C90 129 92 154 110 170 C128 154 130 129 110 112Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M110 88 C107 118 106 154 110 194" stroke="#445635" stroke-width="9"/>
+    <path d="M106 148 C72 116 34 113 14 132 C45 147 77 154 106 148Z" fill="url(#leaf)" stroke="#F7F3EA" stroke-width="3"/>
+    <path d="M114 148 C148 116 186 113 206 132 C175 147 143 154 114 148Z" fill="url(#leaf)" stroke="#F7F3EA" stroke-width="3"/>
+    <path d="M110 16 C92 34 92 53 110 70 C128 53 128 34 110 16Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M78 42 C63 62 66 82 88 93 C100 71 97 54 78 42Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M142 42 C157 62 154 82 132 93 C120 71 123 54 142 42Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M110 62 C91 82 92 105 110 122 C128 105 129 82 110 62Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M66 78 C46 95 48 119 75 132 C93 108 88 90 66 78Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M154 78 C174 95 172 119 145 132 C127 108 132 90 154 78Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
+    <path d="M110 112 C90 129 92 154 110 170 C128 154 130 129 110 112Z" fill="url(#petal)" stroke="#F7F3EA" stroke-width="4"/>
   </g>
 </svg>
