@@ -1,14 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
   <title id="title">Bluebonnet Legacy mark</title>
-  <desc id="desc">Simplified bluebonnet flower mark with navy petals and green leaves.</desc>
-  <rect width="128" height="128" rx="24" fill="#F4F1EA"/>
-  <g transform="translate(64 62)">
-    <path d="M0 18 C-8 4 -5 -10 0 -22 C5 -10 8 4 0 18Z" fill="#24354D"/>
-    <path d="M-18 17 C-28 7 -25 -7 -12 -16 C-8 -3 -8 9 -18 17Z" fill="#2E4666"/>
-    <path d="M18 17 C28 7 25 -7 12 -16 C8 -3 8 9 18 17Z" fill="#2E4666"/>
-    <path d="M-7 -10 C-12 -22 -8 -34 0 -43 C8 -34 12 -22 7 -10Z" fill="#24354D"/>
-    <path d="M0 22 L0 52" fill="none" stroke="#566F4F" stroke-width="6" stroke-linecap="round"/>
-    <path d="M0 43 C-17 31 -29 33 -40 45 C-25 53 -11 52 0 43Z" fill="#566F4F"/>
-    <path d="M0 43 C17 31 29 33 40 45 C25 53 11 52 0 43Z" fill="#566F4F"/>
+  <desc id="desc">A stylized bluebonnet flower with green leaves.</desc>
+  <defs>
+    <linearGradient id="petal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1C456B"/>
+      <stop offset="1" stop-color="#0D2740"/>
+    </linearGradient>
+    <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#66805A"/>
+      <stop offset="1" stop-color="#3E563E"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 88 C107 118 106 154 110 194" stroke="#3E563E" stroke-width="9"/>
+    <path d="M106 148 C72 116 34 113 14 132 C45 147 77 154 106 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
+    <path d="M114 148 C148 116 186 113 206 132 C175 147 143 154 114 148Z" fill="url(#leaf)" stroke="#F4F1EA" stroke-width="3"/>
+    <path d="M110 16 C92 34 92 53 110 70 C128 53 128 34 110 16Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M78 42 C63 62 66 82 88 93 C100 71 97 54 78 42Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M142 42 C157 62 154 82 132 93 C120 71 123 54 142 42Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M110 62 C91 82 92 105 110 122 C128 105 129 82 110 62Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M66 78 C46 95 48 119 75 132 C93 108 88 90 66 78Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M154 78 C174 95 172 119 145 132 C127 108 132 90 154 78Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
+    <path d="M110 112 C90 129 92 154 110 170 C128 154 130 129 110 112Z" fill="url(#petal)" stroke="#F4F1EA" stroke-width="4"/>
   </g>
 </svg>

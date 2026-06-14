@@ -1,155 +1,634 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bluebonnet Legacy | Legacy Alignment Diagnostic</title>
-  <meta name="description" content="Bluebonnet Legacy helps Texas-rooted lower-middle-market businesses install financial clarity, operating structure, and incentive alignment.">
-  <meta property="og:title" content="Bluebonnet Legacy">
-  <meta property="og:description" content="Texas-rooted operational transformation for legacy businesses.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://bluebonnetlegacy.com/">
-  <meta property="og:image" content="https://bluebonnetlegacy.com/assets/bluebonnet-mark.svg">
-  <link rel="icon" href="/assets/bluebonnet-mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bluebonnet Legacy | Alignment Advisory for Founder-Led Businesses</title>
+  <meta name="description" content="Bluebonnet Legacy helps founder-led and family-owned businesses convert decision latency into financial clarity, operational structure, and transition readiness." />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --navy: #112D46;
+      --navy-2: #0B2034;
+      --blue: #1E4C75;
+      --green: #536945;
+      --green-2: #3F563B;
+      --parchment: #F4F1EA;
+      --paper: #FFFEFA;
+      --line: #D7D0C0;
+      --ink: #172234;
+      --muted: #66707C;
+      --soil: #756553;
+      --gold: #BCA676;
+      --shadow: 0 24px 70px rgba(17, 45, 70, .16);
+      --radius: 22px;
+      --serif: Georgia, Cambria, "Times New Roman", Times, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(188,166,118,.16), transparent 36rem),
+        radial-gradient(circle at 90% 18%, rgba(83,105,69,.13), transparent 42rem),
+        linear-gradient(180deg, #FBF9F3 0%, var(--parchment) 100%);
+      font-family: var(--sans);
+      line-height: 1.55;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .42;
+      background-image:
+        linear-gradient(rgba(17,45,70,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,45,70,.025) 1px, transparent 1px);
+      background-size: 36px 36px;
+      mask-image: linear-gradient(180deg, #000, transparent 80%);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(244,241,234,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(215,208,192,.75);
+    }
+    .nav {
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 245px; }
+    .brand img { width: 47px; height: 47px; }
+    .brand-wordmark { display: grid; gap: 2px; }
+    .brand-wordmark strong {
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .brand-wordmark span { font-size: .74rem; letter-spacing: .22em; text-transform: uppercase; color: var(--green); }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: #334055; font-size: .92rem; }
+    .nav-links a { opacity: .9; }
+    .nav-links a:hover { opacity: 1; color: var(--navy); }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .92rem;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      cursor: pointer;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button.primary { background: var(--navy); color: white; box-shadow: 0 13px 28px rgba(17,45,70,.22); }
+    .button.primary:hover { background: var(--navy-2); }
+    .button.secondary { border-color: rgba(17,45,70,.22); color: var(--navy); background: rgba(255,255,255,.48); }
+    .button.secondary:hover { background: white; box-shadow: 0 12px 28px rgba(17,45,70,.08); }
+
+    .hero { padding: 76px 0 52px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 46px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green-2);
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .76rem;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before { content: ""; width: 42px; height: 1px; background: var(--gold); }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); color: var(--navy); font-weight: 700; line-height: 1.05; }
+    h1 { font-size: clamp(3.2rem, 7.4vw, 6.7rem); letter-spacing: -.055em; max-width: 900px; }
+    .hero p.lede {
+      margin: 26px 0 0;
+      font-size: clamp(1.1rem, 1.7vw, 1.36rem);
+      color: #3C4655;
+      max-width: 720px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 36px;
+      max-width: 780px;
+    }
+    .trust-card {
+      border-left: 1px solid var(--line);
+      padding: 3px 18px;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+    .trust-card strong { display: block; font-family: var(--serif); font-size: 1.04rem; color: var(--navy); letter-spacing: .02em; margin-bottom: 3px; }
+
+    .hero-panel {
+      position: relative;
+      min-height: 590px;
+      background: linear-gradient(180deg, #fff 0%, #F7F3EA 100%);
+      border: 1px solid rgba(215,208,192,.95);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, var(--navy) 0 110px, transparent 110px),
+                  radial-gradient(circle at 70% 18%, rgba(30,76,117,.13), transparent 22rem);
+    }
+    .panel-header {
+      position: relative;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .panel-header span {
+      font-family: var(--serif);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+    }
+    .framework-card {
+      position: relative;
+      margin: 28px;
+      padding: 30px 24px 24px;
+      background: rgba(255,254,250,.82);
+      border: 1px solid rgba(215,208,192,.92);
+      border-radius: 22px;
+      box-shadow: 0 22px 44px rgba(17,45,70,.09);
+    }
+    .flower-wrap { display: grid; place-items: center; margin: 2px auto 0; width: min(260px, 80%); }
+    .flower-wrap img { width: 186px; filter: drop-shadow(0 14px 16px rgba(17,45,70,.12)); }
+    .framework-lines {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 14px;
+      align-items: center;
+      margin: 10px 0 18px;
+      font-family: var(--serif);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .framework-lines .side { display: grid; gap: 12px; }
+    .framework-lines .side span {
+      position: relative;
+      font-size: .92rem;
+      padding: 8px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .side.left { text-align: right; }
+    .side.right { text-align: left; }
+    .foundation { margin-top: 18px; display: grid; gap: 9px; }
+    .foundation span {
+      display: block;
+      text-align: center;
+      padding: 10px 8px;
+      border-top: 1px solid var(--line);
+      font-family: var(--serif);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: .85rem;
+    }
+    .soil {
+      position: relative;
+      margin: 16px auto 0;
+      min-height: 96px;
+      max-width: 430px;
+      border-radius: 0 0 50% 50%;
+      background: radial-gradient(ellipse at center top, rgba(117,101,83,.72), rgba(117,101,83,.1) 68%, transparent 69%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: var(--serif);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      gap: 9px;
+      overflow: hidden;
+    }
+    .soil::before {
+      content: "";
+      position: absolute;
+      top: 22px;
+      width: 260px;
+      height: 42px;
+      border-bottom: 3px solid rgba(255,255,255,.86);
+      border-radius: 50%;
+      opacity: .78;
+    }
+    .soil span { position: relative; z-index: 1; }
+
+    section { padding: 82px 0; }
+    .section-head { max-width: 780px; margin-bottom: 38px; }
+    .section-head.center { margin-inline: auto; text-align: center; }
+    .section-head h2 { font-size: clamp(2.3rem, 4.5vw, 4.3rem); letter-spacing: -.035em; }
+    .section-head p { margin: 18px 0 0; color: #4C5666; font-size: 1.05rem; }
+
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pillar {
+      background: rgba(255,254,250,.78);
+      border: 1px solid rgba(215,208,192,.9);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: 0 18px 42px rgba(17,45,70,.06);
+      min-height: 248px;
+    }
+    .pillar .num { font-family: var(--serif); color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 22px; }
+    .pillar h3 { font-size: 1.55rem; letter-spacing: -.01em; }
+    .pillar p { color: #525C6B; margin: 14px 0 0; }
+
+    .split { display: grid; grid-template-columns: .95fr 1.05fr; gap: 34px; align-items: start; }
+    .quote-panel {
+      border-radius: 28px;
+      background: var(--navy);
+      color: white;
+      padding: 42px;
+      min-height: 480px;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 110px;
+    }
+    .quote-panel h2 { color: white; font-size: clamp(2rem, 4vw, 3.7rem); letter-spacing: -.04em; }
+    .quote-panel p { color: rgba(255,255,255,.78); font-size: 1.06rem; margin-top: 18px; }
+    .quote-panel .mini-rule { height: 1px; background: rgba(255,255,255,.2); margin: 34px 0; }
+    .metric {
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    .metric strong { font-family: var(--serif); font-size: 2rem; color: white; }
+    .metric span { color: rgba(255,255,255,.72); font-size: .92rem; }
+    .service-stack { display: grid; gap: 16px; }
+    .service-card {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 18px;
+      padding: 24px;
+      background: rgba(255,254,250,.82);
+      border: 1px solid rgba(215,208,192,.9);
+      border-radius: 22px;
+      box-shadow: 0 16px 34px rgba(17,45,70,.055);
+    }
+    .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(30,76,117,.12), rgba(83,105,69,.16));
+      color: var(--navy);
+      font-family: var(--serif);
+      font-weight: 800;
+      font-size: 1.35rem;
+    }
+    .service-card h3 { font-size: 1.35rem; }
+    .service-card p { margin: 8px 0 0; color: #4D5867; }
+
+    .process-band {
+      background: linear-gradient(135deg, rgba(17,45,70,.96), rgba(11,32,52,.98));
+      color: white;
+      border-radius: 32px;
+      padding: 50px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .process-band::after {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto auto;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(188,166,118,.28), transparent 66%);
+    }
+    .process-band h2 { color: white; font-size: clamp(2rem, 4vw, 3.8rem); letter-spacing: -.035em; max-width: 780px; }
+    .process-band p { color: rgba(255,255,255,.75); max-width: 760px; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 34px; position: relative; z-index: 1; }
+    .step {
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 20px;
+      padding: 24px;
+      background: rgba(255,255,255,.055);
+    }
+    .step strong { display: block; font-family: var(--serif); font-size: 1.4rem; color: white; margin-bottom: 12px; }
+    .step span { color: rgba(255,255,255,.72); font-size: .92rem; }
+
+    .deliverables { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .doc-card {
+      background: var(--paper);
+      border: 1px solid rgba(215,208,192,.98);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 22px 46px rgba(17,45,70,.08);
+    }
+    .doc-top {
+      background: var(--navy);
+      color: white;
+      padding: 20px 24px;
+      font-family: var(--serif);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .92rem;
+    }
+    .doc-body { padding: 26px 24px 28px; min-height: 285px; }
+    .doc-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+    .doc-logo img { width: 34px; height: 34px; }
+    .doc-logo strong { font-family: var(--serif); color: var(--navy); letter-spacing: .12em; text-transform: uppercase; }
+    .fake-line { height: 9px; border-radius: 9px; background: #E7E1D5; margin: 11px 0; }
+    .fake-line.short { width: 54%; }
+    .fake-line.mid { width: 74%; }
+    .mini-chart { height: 84px; display: flex; align-items: end; gap: 9px; margin-top: 26px; padding-bottom: 2px; }
+    .mini-chart i { display: block; width: 21px; background: var(--blue); border-radius: 4px 4px 0 0; opacity: .9; }
+
+    .cta {
+      padding: 86px 0 92px;
+    }
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 30px;
+      background: linear-gradient(180deg, #fff 0%, #F7F3EA 100%);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      padding: 44px;
+      box-shadow: var(--shadow);
+    }
+    .cta-box h2 { font-size: clamp(2rem, 4vw, 4rem); letter-spacing: -.035em; }
+    .cta-box p { color: #4B5564; margin: 14px 0 0; max-width: 720px; }
+
+    footer {
+      padding: 48px 0;
+      background: var(--navy);
+      color: rgba(255,255,255,.75);
+    }
+    footer .footer-grid { display: flex; justify-content: space-between; gap: 26px; align-items: center; }
+    footer .brand-wordmark strong { color: white; }
+    footer .brand-wordmark span { color: rgba(255,255,255,.62); }
+    footer img { width: 44px; height: 44px; }
+    .footer-links { display: flex; gap: 20px; font-size: .9rem; }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split, .cta-box { grid-template-columns: 1fr; }
+      .hero-panel { min-height: auto; }
+      .pillars, .deliverables, .steps { grid-template-columns: 1fr 1fr; }
+      .quote-panel { position: relative; top: auto; min-height: auto; }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, 1180px); }
+      .hero { padding-top: 48px; }
+      .trust-row, .pillars, .deliverables, .steps, .framework-lines { grid-template-columns: 1fr; }
+      .side.left, .side.right { text-align: center; }
+      .flower-wrap { order: -1; }
+      .framework-card { margin: 18px; padding: 22px 16px; }
+      .process-band, .cta-box, .quote-panel { padding: 30px 22px; border-radius: 24px; }
+      .service-card { grid-template-columns: 1fr; }
+      footer .footer-grid { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Bluebonnet Legacy home">
-      <img src="/assets/bluebonnet-wordmark.svg" alt="Bluebonnet Legacy">
-    </a>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#framework">Framework</a>
-      <a href="/diagnostic.html">Diagnostic</a>
-      <a href="#fit">Fit</a>
-      <a href="/brand.html">Brand</a>
-    </nav>
-    <a class="header-cta" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request">Request Diagnostic</a>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Bluebonnet Legacy home">
+        <img src="/assets/bluebonnet-mark.svg" alt="" />
+        <span class="brand-wordmark"><strong>Bluebonnet</strong><span>Legacy</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#framework">Framework</a>
+        <a href="#services">Services</a>
+        <a href="/diagnostic.html">Diagnostic</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="/brand.html">Brand</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button secondary" href="mailto:team@bluebonnetlegacy.com?subject=Bluebonnet%20Diagnostic%20Inquiry">Start a Diagnostic</a>
+    </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Texas-rooted. Operator-first.</p>
-        <h1>Legacy businesses deserve operating systems as strong as their reputation.</h1>
-        <p class="lede">Bluebonnet installs the financial clarity, operating structure, and incentive alignment lower-middle-market companies need to scale, transition, or transact.</p>
-        <div class="actions">
-          <a class="button primary" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request">Request the Diagnostic</a>
-          <a class="button secondary" href="#framework">View the Framework</a>
-        </div>
-      </div>
-      <aside class="hero-panel" aria-label="Diagnostic summary">
-        <div class="panel-top">
-          <img src="/assets/bluebonnet-mark.svg" alt="">
-          <span>Legacy Alignment Diagnostic</span>
-        </div>
-        <div class="metrics">
-          <div>
-            <strong>30-45</strong>
-            <span>days</span>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Texas-rooted transition advisory</div>
+          <h1>Turn decision latency into legacy momentum.</h1>
+          <p class="lede">Bluebonnet Legacy helps founder-led and family-owned businesses create financial clarity, operational structure, and transition readiness before pressure turns into a forced decision.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:team@bluebonnetlegacy.com?subject=Bluebonnet%20Diagnostic%20Inquiry">Request a Diagnostic</a>
+            <a class="button secondary" href="#framework">View the Framework</a>
           </div>
-          <div>
-            <strong>6</strong>
-            <span>lenses</span>
-          </div>
-          <div>
-            <strong>90</strong>
-            <span>day plan</span>
+          <div class="trust-row" aria-label="Core positioning">
+            <div class="trust-card"><strong>Clarity</strong>Find the real constraint before buying another tool.</div>
+            <div class="trust-card"><strong>Cadence</strong>Install operating rhythms that force follow-through.</div>
+            <div class="trust-card"><strong>Continuity</strong>Prepare owners, operators, and successors for the next chapter.</div>
           </div>
         </div>
-        <p>Fixed-scope, operator-led assessment for owners and leadership teams preparing for succession, automation, capital, or exit.</p>
-      </aside>
-    </section>
 
-    <section class="thesis">
-      <div>
-        <p class="eyebrow">The Opportunity</p>
-        <h2>Value is trapped by weak operating systems, not weak demand.</h2>
-      </div>
-      <p>Texas-centered operators in manufacturing, industrial, energy services, and construction often have loyal customers and real assets, but fragmented reporting, founder dependence, and misaligned incentives can hide margin and slow decisions.</p>
-    </section>
-
-    <section id="framework" class="band">
-      <div class="section-heading">
-        <p class="eyebrow">The Bluebonnet Alignment Framework</p>
-        <h2>A practical system for lifting clarity, control, and value.</h2>
-      </div>
-      <div class="stem-grid">
-        <article>
-          <span>01</span>
-          <h3>Financial Clarity</h3>
-          <p>Dashboards, margin visibility, cash forecasting, and unit economics.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Operational Structure</h3>
-          <p>Roles, decision rights, documented processes, and escalation paths.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Incentive Alignment</h3>
-          <p>Compensation and scorecards connected to real business outcomes.</p>
-        </article>
-      </div>
-      <div class="capabilities" aria-label="Operational capabilities">
-        <span>Reporting Architecture</span>
-        <span>Process Engineering</span>
-        <span>Technology Leverage</span>
-        <span>Leadership Rhythm</span>
-        <span>Culture and Accountability</span>
-        <span>Capital Efficiency</span>
+        <aside class="hero-panel" id="framework" aria-label="Bluebonnet Alignment Framework preview">
+          <div class="panel-header"><span>Bluebonnet Alignment Framework™</span></div>
+          <div class="framework-card">
+            <div class="framework-lines">
+              <div class="side left">
+                <span>Reporting Architecture</span>
+                <span>Technology Leverage</span>
+                <span>Capital Efficiency</span>
+              </div>
+              <div class="flower-wrap"><img src="/assets/bluebonnet-mark.svg" alt="Bluebonnet flower mark" /></div>
+              <div class="side right">
+                <span>Process Engineering</span>
+                <span>Incentive Alignment</span>
+                <span>Leadership Rhythm</span>
+              </div>
+            </div>
+            <div class="foundation">
+              <span>Financial Clarity</span>
+              <span>Operational Structure</span>
+              <span>Incentive Alignment</span>
+            </div>
+            <div class="soil" aria-label="Root inputs">
+              <span>Capital + Culture</span>
+              <span>Market Conditions</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section id="diagnostic" class="diagnostic">
-      <div class="section-heading left">
-        <p class="eyebrow">The Flagship Product</p>
-        <h2>Legacy Alignment Diagnostic</h2>
-        <p>Fixed-scope assessment that produces a clear 90-day action plan.</p>
+    <section>
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow">What gets fixed first</div>
+          <h2>Three levers that make a business easier to run, value, and transition.</h2>
+          <p>The goal is not a binder full of recommendations. The goal is a clearer operating system that owners and teams can actually execute.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar">
+            <div class="num">01</div>
+            <h3>Financial Clarity</h3>
+            <p>Normalize the numbers, separate signal from noise, and define which decisions actually move cash flow, margin, and enterprise value.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">02</div>
+            <h3>Operational Structure</h3>
+            <p>Map how work really moves through the business, identify bottlenecks, and install reporting, process, and accountability rhythm.</p>
+          </article>
+          <article class="pillar">
+            <div class="num">03</div>
+            <h3>Incentive Alignment</h3>
+            <p>Connect roles, goals, compensation, and leadership expectations so the company stops depending on heroic owner intervention.</p>
+          </article>
+        </div>
       </div>
-      <div class="diagnostic-layout">
+    </section>
+
+    <section id="services">
+      <div class="container split">
+        <aside class="quote-panel">
+          <div class="eyebrow" style="color:rgba(255,255,255,.72)">Advisory posture</div>
+          <h2>Quiet, practical work for high-consequence operators.</h2>
+          <p>Bluebonnet is designed for leaders who need straight answers, sharper systems, and a clean path from current state to next chapter.</p>
+          <div class="mini-rule"></div>
+          <div class="metric"><strong>2–4</strong><span>week diagnostic sprint to locate the constraint, define priorities, and produce an executive action plan.</span></div>
+          <div class="metric"><strong>90</strong><span>day operating cadence to move from recommendations to measurable execution.</span></div>
+        </aside>
+        <div class="service-stack">
+          <article class="service-card">
+            <div class="icon">D</div>
+            <div><h3>Alignment Diagnostic</h3><p>A structured review of financial reporting, process flow, technology usage, leadership rhythm, and incentive design.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="icon">O</div>
+            <div><h3>Operating Cadence Buildout</h3><p>Meeting rhythms, scorecards, ownership maps, and decision protocols that reduce ambiguity and force accountability.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="icon">T</div>
+            <div><h3>Transition & Acquisition Readiness</h3><p>Prepare founder-led companies for succession, outside capital, acquisition conversations, or internal operator handoff.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="icon">A</div>
+            <div><h3>Technology Leverage</h3><p>Evaluate where software, automation, and practical AI can remove manual drag without adding another unmanaged system.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="process-band">
+          <h2>A repeatable path from ambiguity to action.</h2>
+          <p>The site should position Bluebonnet as a serious diagnostic and execution partner, not a generic consulting brand. This process makes the work tangible before a client ever books a call.</p>
+          <div class="steps">
+            <div class="step"><strong>01. Intake</strong><span>Define owner goals, constraints, transition horizon, and current decision bottlenecks.</span></div>
+            <div class="step"><strong>02. Diagnose</strong><span>Review financial clarity, process, technology, incentives, and leadership cadence.</span></div>
+            <div class="step"><strong>03. Align</strong><span>Prioritize the highest-value fixes and install an executive operating plan.</span></div>
+            <div class="step"><strong>04. Execute</strong><span>Move through 30/60/90-day workstreams with scorecards and ownership.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deliverables">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Client-facing assets</div>
+          <h2>Replace fuzzy consulting language with concrete executive deliverables.</h2>
+          <p>These are the improved versions of the assets shown in the mockups: cleaner hierarchy, corrected language, real content sections, and a more premium institutional tone.</p>
+        </div>
         <div class="deliverables">
-          <h3>What you receive</h3>
-          <ul>
-            <li>Full Bluebonnet Alignment Framework mapping</li>
-            <li>Executive summary with quantified friction and value leakage</li>
-            <li>Prioritized opportunities across reporting, process, incentives, and technology</li>
-            <li>Concrete 90-day implementation roadmap with ROI estimates</li>
-            <li>Visual command center summary of current state</li>
-            <li>60-minute leadership readout</li>
-          </ul>
-        </div>
-        <div class="investment">
-          <p>Investment</p>
-          <strong>$8,500-$12,000</strong>
-          <span>Fixed scope. 30-45 days.</span>
+          <article class="doc-card">
+            <div class="doc-top">Diagnostic Report</div>
+            <div class="doc-body">
+              <div class="doc-logo"><img src="/assets/bluebonnet-mark.svg" alt="" /><strong>Bluebonnet Legacy</strong></div>
+              <div class="fake-line mid"></div><div class="fake-line"></div><div class="fake-line short"></div>
+              <div class="mini-chart" aria-hidden="true"><i style="height:44px"></i><i style="height:58px"></i><i style="height:39px"></i><i style="height:73px"></i><i style="height:64px"></i></div>
+            </div>
+          </article>
+          <article class="doc-card">
+            <div class="doc-top">Acquisition LOI</div>
+            <div class="doc-body">
+              <div class="doc-logo"><img src="/assets/bluebonnet-mark.svg" alt="" /><strong>Bluebonnet Legacy</strong></div>
+              <div class="fake-line short"></div><div class="fake-line"></div><div class="fake-line mid"></div><br />
+              <div class="fake-line"></div><div class="fake-line"></div><div class="fake-line short"></div>
+            </div>
+          </article>
+          <article class="doc-card">
+            <div class="doc-top">Investor One-Pager</div>
+            <div class="doc-body">
+              <div class="doc-logo"><img src="/assets/bluebonnet-mark.svg" alt="" /><strong>Bluebonnet Legacy</strong></div>
+              <h3 style="font-size:1.55rem;margin-bottom:14px">Texas Rooted. Legacy Elevated.</h3>
+              <div class="fake-line"></div><div class="fake-line mid"></div><div class="fake-line short"></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="fit" class="fit">
-      <div>
-        <h2>Best Fit</h2>
-        <p>$5M-$50M revenue, 20-200 employees, industrial or field-heavy operations, and leadership teams that want clarity before a major decision.</p>
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <div class="eyebrow">Next step</div>
+            <h2>Use the homepage to sell the diagnostic first.</h2>
+            <p>Bluebonnetlegacy.com should make one thing obvious: a founder or operator can start with a contained diagnostic, receive a serious executive readout, then decide whether to pursue advisory, transition readiness, or acquisition planning.</p>
+          </div>
+          <a class="button primary" href="mailto:team@bluebonnetlegacy.com?subject=Bluebonnet%20Diagnostic%20Inquiry">Open Inquiry Email</a>
+        </div>
       </div>
-      <div>
-        <h2>Bluebonnet Edge</h2>
-        <p>Operator-first engagement, productized diagnostic report, installable management system, and selective equity upside where value creation fits.</p>
-      </div>
-    </section>
-
-    <section class="cta">
-      <p class="eyebrow">Start with clarity</p>
-      <h2>See where value is leaking.</h2>
-      <p>The diagnostic gives you a concrete plan you can act on immediately.</p>
-      <a class="button primary" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request">Request the Diagnostic</a>
-      <span>team@bluebonnetlegacy.com</span>
     </section>
   </main>
 
   <footer>
-    <span>Bluebonnet Legacy</span>
-    <span>Texas-rooted operational transformation and acquisition platform</span>
+    <div class="container footer-grid">
+      <div class="brand">
+        <img src="/assets/bluebonnet-mark.svg" alt="" />
+        <span class="brand-wordmark"><strong>Bluebonnet</strong><span>Legacy</span></span>
+      </div>
+      <div class="footer-links">
+        <span>Financial Clarity</span>
+        <span>Operational Structure</span>
+        <span>Incentive Alignment</span>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

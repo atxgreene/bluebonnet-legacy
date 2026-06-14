@@ -4,7 +4,7 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 
 ## Pages
 
-- `index.html` - public homepage rebuilt from the Bluebonnet homepage mockup.
+- `index.html` - public homepage from the `bluebonnetlegacy_site_v1` bundle.
 - `diagnostic.html` - Legacy Alignment Diagnostic one-pager from the Bluebonnet asset pack.
 - `brand.html` - compact production brand system for colors, typography, spacing, logo usage, and framework language.
 
@@ -16,6 +16,8 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 - `assets/asset-pack/panel_crops/` - extracted board and document panel assets.
 - `assets/bluebonnet-mark.svg` - simplified production vector mark for small-format use.
 - `assets/bluebonnet-wordmark.svg` - simplified production vector wordmark for web use.
+- `assets/favicon.svg` - SVG favicon from the `bluebonnetlegacy_site_v1` bundle.
+- `docs/brand-brief.md` - positioning notes and brand tokens from the `bluebonnetlegacy_site_v1` bundle.
 
 ## Production Notes
 

@@ -9,6 +9,7 @@ Primary local references:
 - `Project Bluebonnet/bluebonnet_asset_pack/brand_palette.png`
 - `Project Bluebonnet/bluebonnet_asset_pack/logo_crops`
 - `Project Bluebonnet/bluebonnet_asset_pack/panel_crops`
+- `Downloads/bluebonnetlegacy_site_v1`
 
 The raster homepage mockup is not used as the live page. It was used as the visual reference for the static HTML/CSS implementation.
 
@@ -20,3 +21,10 @@ Implemented production follow-up from the asset-pack README:
 - Added `brand.html` as the compact brand system page.
 - Standardized public brand architecture around Bluebonnet Legacy.
 - Standardized framework language across the public homepage and brand page.
+
+Homepage update:
+
+- Replaced the initial homepage with the stronger `bluebonnetlegacy_site_v1/index.html` direction.
+- Adapted asset paths to repo-hosted `/assets/` files.
+- Swapped inquiry email links to `team@bluebonnetlegacy.com`.
+- Kept the public brand as Bluebonnet Legacy in mock document cards.
