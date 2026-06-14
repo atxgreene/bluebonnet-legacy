@@ -43,4 +43,4 @@ Expected DNS records:
 - `A @ 185.199.109.153`
 - `A @ 185.199.110.153`
 - `A @ 185.199.111.153`
-- `CNAME www bluebonnetlegacy.com`
+- `CNAME www atxgreene.github.io`

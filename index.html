@@ -8,18 +8,18 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <style>
     :root {
-      --navy: #112D46;
-      --navy-2: #0B2034;
-      --blue: #1E4C75;
-      --green: #536945;
-      --green-2: #3F563B;
+      --navy: #24354D;
+      --navy-2: #1A283A;
+      --blue: #2E4666;
+      --green: #566F4F;
+      --green-2: #45593F;
       --parchment: #F4F1EA;
       --paper: #FFFEFA;
       --line: #D7D0C0;
       --ink: #172234;
       --muted: #66707C;
       --soil: #756553;
-      --gold: #BCA676;
+      --gold: #C8A65A;
       --shadow: 0 24px 70px rgba(17, 45, 70, .16);
       --radius: 22px;
       --serif: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -33,8 +33,8 @@
       overflow-x: hidden;
       color: var(--ink);
       background:
-        radial-gradient(circle at 20% 0%, rgba(188,166,118,.16), transparent 36rem),
-        radial-gradient(circle at 90% 18%, rgba(83,105,69,.13), transparent 42rem),
+        radial-gradient(circle at 20% 0%, rgba(200,166,90,.16), transparent 36rem),
+        radial-gradient(circle at 90% 18%, rgba(86,111,79,.13), transparent 42rem),
         linear-gradient(180deg, #FBF9F3 0%, var(--parchment) 100%);
       font-family: var(--sans);
       line-height: 1.55;
@@ -46,8 +46,8 @@
       pointer-events: none;
       opacity: .42;
       background-image:
-        linear-gradient(rgba(17,45,70,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17,45,70,.025) 1px, transparent 1px);
+        linear-gradient(rgba(36,53,77,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(36,53,77,.025) 1px, transparent 1px);
       background-size: 36px 36px;
       mask-image: linear-gradient(180deg, #000, transparent 80%);
     }
@@ -100,10 +100,10 @@
       cursor: pointer;
     }
     .button:hover { transform: translateY(-1px); }
-    .button.primary { background: var(--navy); color: white; box-shadow: 0 13px 28px rgba(17,45,70,.22); }
+    .button.primary { background: var(--navy); color: white; box-shadow: 0 13px 28px rgba(36,53,77,.22); }
     .button.primary:hover { background: var(--navy-2); }
-    .button.secondary { border-color: rgba(17,45,70,.22); color: var(--navy); background: rgba(255,255,255,.48); }
-    .button.secondary:hover { background: white; box-shadow: 0 12px 28px rgba(17,45,70,.08); }
+    .button.secondary { border-color: rgba(36,53,77,.22); color: var(--navy); background: rgba(255,255,255,.48); }
+    .button.secondary:hover { background: white; box-shadow: 0 12px 28px rgba(36,53,77,.08); }
 
     .hero { padding: 76px 0 52px; }
     .hero-grid {
@@ -162,7 +162,7 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, var(--navy) 0 110px, transparent 110px),
-                  radial-gradient(circle at 70% 18%, rgba(30,76,117,.13), transparent 22rem);
+                  radial-gradient(circle at 70% 18%, rgba(46,70,102,.13), transparent 22rem);
     }
     .panel-header {
       position: relative;
@@ -187,10 +187,10 @@
       background: rgba(255,254,250,.82);
       border: 1px solid rgba(215,208,192,.92);
       border-radius: 22px;
-      box-shadow: 0 22px 44px rgba(17,45,70,.09);
+      box-shadow: 0 22px 44px rgba(36,53,77,.09);
     }
     .flower-wrap { display: grid; place-items: center; margin: 2px auto 0; width: min(260px, 80%); }
-    .flower-wrap img { width: 186px; filter: drop-shadow(0 14px 16px rgba(17,45,70,.12)); }
+    .flower-wrap img { width: 186px; filter: drop-shadow(0 14px 16px rgba(36,53,77,.12)); }
     .framework-lines {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -267,7 +267,7 @@
       border: 1px solid rgba(215,208,192,.9);
       border-radius: var(--radius);
       padding: 30px;
-      box-shadow: 0 18px 42px rgba(17,45,70,.06);
+      box-shadow: 0 18px 42px rgba(36,53,77,.06);
       min-height: 248px;
     }
     .pillar .num { font-family: var(--serif); color: var(--gold); font-size: 2.5rem; line-height: 1; margin-bottom: 22px; }
@@ -306,7 +306,7 @@
       background: rgba(255,254,250,.82);
       border: 1px solid rgba(215,208,192,.9);
       border-radius: 22px;
-      box-shadow: 0 16px 34px rgba(17,45,70,.055);
+      box-shadow: 0 16px 34px rgba(36,53,77,.055);
     }
     .icon {
       width: 58px;
@@ -314,7 +314,7 @@
       border-radius: 17px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(30,76,117,.12), rgba(83,105,69,.16));
+      background: linear-gradient(135deg, rgba(46,70,102,.12), rgba(86,111,79,.16));
       color: var(--navy);
       font-family: var(--serif);
       font-weight: 800;
@@ -324,7 +324,7 @@
     .service-card p { margin: 8px 0 0; color: #4D5867; }
 
     .process-band {
-      background: linear-gradient(135deg, rgba(17,45,70,.96), rgba(11,32,52,.98));
+      background: linear-gradient(135deg, rgba(36,53,77,.96), rgba(26,40,58,.98));
       color: white;
       border-radius: 32px;
       padding: 50px;
@@ -338,7 +338,7 @@
       inset: -20% -10% auto auto;
       width: 360px;
       height: 360px;
-      background: radial-gradient(circle, rgba(188,166,118,.28), transparent 66%);
+      background: radial-gradient(circle, rgba(200,166,90,.28), transparent 66%);
     }
     .process-band h2 { color: white; font-size: clamp(2rem, 4vw, 3.8rem); letter-spacing: -.035em; max-width: 780px; }
     .process-band p { color: rgba(255,255,255,.75); max-width: 760px; }
@@ -358,7 +358,7 @@
       border: 1px solid rgba(215,208,192,.98);
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 22px 46px rgba(17,45,70,.08);
+      box-shadow: 0 22px 46px rgba(36,53,77,.08);
     }
     .doc-top {
       background: var(--navy);
