@@ -1,148 +1,325 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#24354d" />
-    <title>Bluebonnet Legacy - Alignment Diagnostic</title>
-    <meta
-      name="description"
-      content="A focused operating diagnostic for legacy businesses preparing to scale, transition, or transact."
-    />
-    <meta property="og:title" content="Bluebonnet Legacy Alignment Diagnostic" />
-    <meta property="og:image" content="assets/bluebonnet-social-banner.png" />
-    <link rel="icon" href="assets/favicon.ico" sizes="any" />
-    <link rel="icon" href="assets/favicon-32.png" type="image/png" />
-    <link rel="stylesheet" href="src/styles.css" />
-    <script src="src/app.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Bluebonnet Legacy home">
-        <img src="assets/bluebonnet-primary-lockup.png" alt="Bluebonnet Legacy" />
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="index.html#framework">Framework</a>
-        <a href="#deliverables">Deliverables</a>
-        <a href="#scorecard">Scorecard</a>
-        <a href="#fit">Fit</a>
-      </nav>
-      <a class="button button-dark" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic">Book Call</a>
-    </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluebonnet Legacy • Diagnostic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+        }
 
-    <main>
-      <section class="diagnostic-hero">
-        <div>
-          <p class="eyebrow">Legacy Alignment Diagnostic</p>
-          <h1>Find the value trapped inside the operating system.</h1>
-          <p>
-            A focused assessment for founders, family operators, boards, and investors who need
-            better visibility before scaling, succession, or a transaction process.
-          </p>
-          <a class="button button-dark" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request">Request Diagnostic</a>
-        </div>
-        <aside class="diagnostic-card">
-          <span>Fixed-scope preview</span>
-          <strong>30-180 day roadmap</strong>
-          <p>Reporting clarity, leadership rhythm, incentive logic, and process discipline.</p>
-        </aside>
-      </section>
+        .navy {
+            color: #0F172A;
+        }
 
-      <section class="section section-raised" id="deliverables">
-        <div class="section-heading">
-          <p class="eyebrow">What you get</p>
-          <h2>A board-ready map of operating friction.</h2>
-        </div>
-        <div class="deliverable-grid">
-          <article>
-            <h3>Financial visibility review</h3>
-            <p>Dashboard readiness, margin reporting, KPI definitions, and unit economics gaps.</p>
-          </article>
-          <article>
-            <h3>Operating cadence map</h3>
-            <p>Leadership meetings, decision rights, SOP coverage, and accountability loops.</p>
-          </article>
-          <article>
-            <h3>Incentive alignment readout</h3>
-            <p>Compensation logic, performance signals, ownership incentives, and long-term value drivers.</p>
-          </article>
-          <article>
-            <h3>Implementation roadmap</h3>
-            <p>Prioritized next moves across reporting, process, automation, and governance.</p>
-          </article>
-        </div>
-      </section>
+        .section-header {
+            font-size: 2rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.035em;
+        }
 
-      <section class="section" id="scorecard">
-        <div class="split">
-          <div>
-            <p class="eyebrow">Interactive preview</p>
-            <h2>Quick alignment score</h2>
-            <p>
-              This lightweight scorecard mirrors the diagnostic conversation and helps frame the
-              first operating questions before a formal engagement.
+        .bluebonnet-blue {
+            color: #1E3A8A;
+        }
+
+        .clean-card {
+            transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .framework-stem {
+            background: linear-gradient(90deg, #1E3A8A, #1E40AF);
+            color: white;
+        }
+
+        .metric {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .one-pager {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { font-size: 10.5pt; }
+            .section-header { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+    <!-- NAV -->
+    <nav class="bg-[#0F172A] text-white sticky top-0 z-50 no-print">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-14">
+                <div class="flex items-center gap-x-3">
+                    <div class="flex items-center gap-x-2">
+                        <!-- Bluebonnet Legacy Logo -->
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 relative">
+                                <div class="absolute w-8 h-8 bg-[#1E3A8A] rounded-full"></div>
+                                <div class="absolute w-5 h-5 bg-[#3B82F6] rounded-full top-1.5 left-1.5"></div>
+                                <div class="absolute w-2.5 h-2.5 bg-white rounded-full top-2.5 left-2.5"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="font-semibold text-xl tracking-tighter">Bluebonnet</span>
+                            <span class="font-medium text-sm text-blue-400">Legacy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-x-6 text-sm">
+                    <a href="#framework" class="hover:text-blue-300 transition-colors">Framework</a>
+                    <a href="#offer" class="hover:text-blue-300 transition-colors">The Diagnostic</a>
+                    <a href="#why" class="hover:text-blue-300 transition-colors">Why Bluebonnet</a>
+                </div>
+
+                <div>
+                    <a href="#cta" 
+                       class="px-5 py-2 text-sm font-semibold bg-white text-[#0F172A] hover:bg-blue-50 rounded-3xl transition-all flex items-center gap-x-2">
+                        <span>Request Diagnostic</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="max-w-5xl mx-auto px-6 pt-14 pb-10">
+        <div class="text-center">
+            <div class="inline-flex items-center gap-x-2 bg-white border border-slate-200 rounded-3xl px-4 py-1 mb-6 text-sm">
+                <span class="font-medium text-emerald-700">Texas-rooted</span>
+                <span class="text-slate-400">•</span>
+                <span class="font-medium">Operator-first</span>
+            </div>
+
+            <h1 class="text-6xl md:text-7xl leading-none tracking-tighter font-semibold navy mb-4">
+                Texas-rooted.<br>Legacy elevated.
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-2xl text-slate-600 tracking-tight mb-8">
+                Bluebonnet installs the financial clarity, operating structure, and incentive alignment legacy businesses need to scale or transact.
             </p>
-          </div>
-          <form class="score-form" id="scoreForm">
-            <label>
-              <input type="checkbox" name="kpis" />
-              KPI dashboard is current and trusted by leadership.
-            </label>
-            <label>
-              <input type="checkbox" name="roles" />
-              Decision rights and process owners are documented.
-            </label>
-            <label>
-              <input type="checkbox" name="incentives" />
-              Incentives are tied to margin, cash, quality, and enterprise value.
-            </label>
-            <label>
-              <input type="checkbox" name="succession" />
-              Key-person risk and succession paths are understood.
-            </label>
-          </form>
-        </div>
-        <div class="score-output" id="scoreOutput" aria-live="polite"></div>
-      </section>
 
-      <section class="section" id="fit">
-        <div class="section-heading compact">
-          <p class="eyebrow">Best fit</p>
-          <h2>Designed for practical operators, not theater.</h2>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#cta" 
+                   class="px-8 py-4 text-lg font-semibold bg-[#1E3A8A] hover:bg-[#1E40AF] text-white rounded-3xl transition-all flex items-center justify-center gap-x-3 shadow-lg active:scale-[0.985]">
+                    <span>Request the Diagnostic</span>
+                </a>
+                <a href="#framework" 
+                   class="px-7 py-4 text-lg font-medium border border-slate-300 hover:bg-slate-50 rounded-3xl transition-all flex items-center justify-center gap-x-2 text-slate-700">
+                    <span>View the Framework</span>
+                </a>
+            </div>
+            
+            <div class="mt-6 text-sm text-slate-500">
+                Fixed-scope • 30–45 days • Clear 90-day action plan
+            </div>
         </div>
-        <div class="fit-grid">
-          <article class="card">
-            <h3>Owner-led businesses</h3>
-            <p>Revenue is real, operations are working, but the business depends too heavily on a few people.</p>
-          </article>
-          <article class="card">
-            <h3>Investor-backed teams</h3>
-            <p>Portfolio companies need clearer reporting, repeatable cadence, and faster value creation.</p>
-          </article>
-          <article class="card">
-            <h3>Transition moments</h3>
-            <p>Succession, acquisition, recapitalization, or growth pressure requires cleaner operating infrastructure.</p>
-          </article>
-        </div>
-      </section>
+    </div>
 
-      <section class="section cta-panel">
-        <div>
-          <p class="eyebrow">Next step</p>
-          <h2>Begin with the diagnostic.</h2>
-          <p>
-            The goal is not a binder. It is a practical sequence of improvements that increases
-            clarity, control, and enterprise value.
-          </p>
-          <a class="button button-dark" href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request">Book 15-minute fit call</a>
+    <!-- PROBLEM / THESIS -->
+    <div class="max-w-5xl mx-auto px-6 py-10 border-t border-slate-200">
+        <div class="grid md:grid-cols-12 gap-x-10 items-center">
+            <div class="md:col-span-7">
+                <div class="text-xs font-semibold tracking-[2px] text-emerald-700 mb-2">THE OPPORTUNITY</div>
+                <h2 class="section-header navy mb-5">Value is trapped in legacy businesses — not by weak demand, but by weak operating systems.</h2>
+                
+                <div class="text-lg text-slate-600">
+                    Lower-middle-market operators ($5M–$50M) in manufacturing, industrial, energy services, and construction often have strong demand and real assets, but suffer from founder dependence, fragmented reporting, and misaligned incentives. When key people retire, knowledge and margin walk out the door.
+                </div>
+            </div>
+            
+            <div class="md:col-span-5 mt-8 md:mt-0">
+                <div class="bg-slate-900 text-white p-7 rounded-3xl">
+                    <div class="text-sm font-medium text-blue-400 mb-3">BLUEBONNET THESIS</div>
+                    <div class="text-[15px] leading-relaxed">
+                        Bluebonnet targets businesses where value is trapped by weak reporting, founder dependence, and misaligned incentives. We combine high-margin advisory with selective equity participation.
+                    </div>
+                    <div class="mt-5 pt-5 border-t border-white/20 text-xs flex items-center gap-x-2">
+                        <i class="fa-solid fa-check text-emerald-400"></i>
+                        <span>Advisory cash flow + equity upside</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <img class="cta-mark" src="assets/bluebonnet-legacy-icon.svg" alt="" />
-      </section>
-    </main>
+    </div>
 
-    <footer class="site-footer">
-      <strong>Bluebonnet Legacy</strong>
-      <span><a href="index.html">Homepage</a> / Diagnostic preview</span>
+    <!-- FRAMEWORK -->
+    <div id="framework" class="max-w-6xl mx-auto px-6 py-14 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <div class="text-emerald-700 text-xs font-semibold tracking-[2px] mb-2">THE BLUEBONNET ALIGNMENT FRAMEWORK™</div>
+            <h2 class="section-header navy">A simple system for lifting clarity, control, and value.</h2>
+        </div>
+
+        <!-- Stem -->
+        <div class="max-w-4xl mx-auto mb-8">
+            <div class="text-center mb-3">
+                <span class="text-xs font-semibold tracking-wider text-white bg-[#1E3A8A] px-4 py-1 rounded-3xl">THE STEM — CORE ALIGNMENTS</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="framework-stem p-5 rounded-3xl text-center">
+                    <div class="font-semibold text-lg">Financial Clarity</div>
+                    <div class="text-sm opacity-90 mt-1">Dashboards, margin visibility, cash forecasting, unit economics</div>
+                </div>
+                <div class="framework-stem p-5 rounded-3xl text-center">
+                    <div class="font-semibold text-lg">Operational Structure</div>
+                    <div class="text-sm opacity-90 mt-1">Roles, decision rights, documented processes, escalation paths</div>
+                </div>
+                <div class="framework-stem p-5 rounded-3xl text-center">
+                    <div class="font-semibold text-lg">Incentive Alignment</div>
+                    <div class="text-sm opacity-90 mt-1">Compensation and scorecards tied to real outcomes</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Petals -->
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-3">
+                <span class="text-xs font-semibold tracking-wider text-emerald-700">THE PETALS — OPERATIONAL CAPABILITIES</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Reporting Architecture</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Process Engineering</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Technology Leverage</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Leadership Rhythm</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Culture &amp; Accountability</div>
+                </div>
+                <div class="bg-white border border-slate-200 p-4 rounded-2xl text-sm text-center">
+                    <div class="font-medium">Capital Efficiency</div>
+                </div>
+            </div>
+            <p class="text-center text-xs text-slate-500 mt-4">The stem must be installed first. The petals compound once the core alignments are in place.</p>
+        </div>
+    </div>
+
+    <!-- THE OFFER -->
+    <div id="offer" class="max-w-5xl mx-auto px-6 py-14">
+        <div class="max-w-2xl mb-8">
+            <div class="text-emerald-700 text-xs font-semibold tracking-[2px] mb-2">THE FLAGSHIP PRODUCT</div>
+            <h2 class="section-header navy">Legacy Alignment Diagnostic</h2>
+            <p class="text-xl text-slate-600 mt-2">Fixed-scope, operator-led assessment that produces a clear 90-day action plan.</p>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-x-8">
+            <div class="md:col-span-7">
+                <div class="clean-card bg-white border border-slate-200 rounded-3xl p-8">
+                    <div class="grid grid-cols-3 gap-4 mb-8 text-center">
+                        <div>
+                            <div class="text-4xl font-semibold text-[#1E3A8A]">30–45</div>
+                            <div class="text-xs tracking-wider text-slate-500 mt-1">DAYS TO DIAGNOSE</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-[#1E3A8A]">6</div>
+                            <div class="text-xs tracking-wider text-slate-500 mt-1">ASSESSMENT LENSES</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold text-[#1E3A8A]">90</div>
+                            <div class="text-xs tracking-wider text-slate-500 mt-1">DAY ACTION PLAN</div>
+                        </div>
+                    </div>
+
+                    <div class="text-sm">
+                        <div class="font-semibold mb-3">What you receive</div>
+                        <ul class="space-y-2.5 text-[14.5px] text-slate-600">
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> Full Bluebonnet Alignment Framework mapping</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> Executive summary with quantified friction and value leakage</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> Prioritized opportunities (reporting, process, incentives, technology)</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> Concrete 90-day implementation roadmap with ROI estimates</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> Visual Command Center summary of current state</li>
+                            <li class="flex gap-3"><i class="fa-solid fa-check text-emerald-600 mt-1 w-4"></i> 60-minute leadership readout</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 mt-8 md:mt-0">
+                <div class="bg-[#0F172A] text-white p-8 rounded-3xl h-full flex flex-col">
+                    <div>
+                        <div class="text-sm text-blue-400 font-medium">INVESTMENT</div>
+                        <div class="mt-2 flex items-baseline gap-x-2">
+                            <span class="text-5xl font-semibold tracking-tighter">$8,500</span>
+                            <span class="text-2xl text-white/60">–</span>
+                            <span class="text-5xl font-semibold tracking-tighter">$12,000</span>
+                        </div>
+                        <div class="text-sm text-white/70 mt-1">Fixed scope • 30–45 days</div>
+                    </div>
+                    
+                    <div class="mt-auto pt-8 border-t border-white/20 text-sm">
+                        <div class="font-medium mb-2">Best for</div>
+                        <div class="text-white/80">Owners and leadership teams who want clarity before making big decisions on succession, automation, capital, or exit.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHY BLUEBONNET -->
+    <div id="why" class="max-w-5xl mx-auto px-6 py-12 border-t border-slate-200">
+        <div class="text-center mb-8">
+            <div class="text-emerald-700 text-xs font-semibold tracking-[2px]">WHY BLUEBONNET WINS</div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-5">
+            <div class="clean-card border border-slate-200 p-7 rounded-3xl">
+                <div class="font-semibold mb-4">Target Profile</div>
+                <div class="space-y-2 text-sm text-slate-600">
+                    <div>$5M–$50M revenue</div>
+                    <div>20–200 employees</div>
+                    <div>Industrial, construction, energy services, manufacturing</div>
+                    <div>Texas-centered regional operators</div>
+                </div>
+            </div>
+            
+            <div class="clean-card border border-slate-200 p-7 rounded-3xl">
+                <div class="font-semibold mb-4">Our Edge</div>
+                <div class="space-y-2 text-sm text-slate-600">
+                    <div>Operator-first engagement model</div>
+                    <div>Productized diagnostic report</div>
+                    <div>Installable management system</div>
+                    <div>Equity upside through value creation (where it fits)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div id="cta" class="max-w-4xl mx-auto px-6 py-14 text-center border-t border-slate-200">
+        <h2 class="text-4xl tracking-tighter font-semibold navy mb-4">Ready to see where value is leaking?</h2>
+        <p class="text-xl text-slate-600 mb-8 max-w-md mx-auto">The diagnostic gives you clarity in 30–45 days and a concrete plan you can act on immediately.</p>
+        
+        <a href="mailto:team@bluebonnetlegacy.com?subject=Legacy%20Alignment%20Diagnostic%20Request" 
+           class="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold bg-emerald-700 hover:bg-emerald-800 text-white rounded-3xl transition-all shadow-lg active:scale-[0.985]">
+            Request the Diagnostic
+        </a>
+        
+        <div class="mt-4 text-sm text-slate-500">Or email team@bluebonnetlegacy.com</div>
+    </div>
+
+    <footer class="border-t border-slate-200 py-8 text-xs text-slate-400 text-center">
+        Bluebonnet Legacy • Texas-rooted operational transformation and acquisition platform
     </footer>
-  </body>
+</body>
 </html>

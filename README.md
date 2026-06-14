@@ -5,7 +5,14 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 ## Pages
 
 - `index.html` - public homepage rebuilt from the Bluebonnet homepage mockup.
-- `diagnostic.html` - secondary preview page for the Legacy Alignment Diagnostic.
+- `diagnostic.html` - Legacy Alignment Diagnostic one-pager from the Bluebonnet asset pack.
+
+## Source Assets
+
+- `assets/asset-pack/brand_tokens.css` - suggested production color tokens.
+- `assets/asset-pack/brand_palette.png` - visual palette reference.
+- `assets/asset-pack/logo_crops/` - extracted logo raster assets.
+- `assets/asset-pack/panel_crops/` - extracted board and document panel assets.
 
 ## Local Preview
 
@@ -25,4 +32,4 @@ Expected DNS records:
 - `A @ 185.199.109.153`
 - `A @ 185.199.110.153`
 - `A @ 185.199.111.153`
-- `CNAME www atxgreene.github.io`
+- `CNAME www bluebonnetlegacy.com`
