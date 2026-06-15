@@ -134,6 +134,29 @@
     });
   }
 
+  /* ---- liquid 3D tilt + sheen on cards ---- */
+  if (finePointer && !reduce) {
+    document.querySelectorAll('.teaser, .card, .svc').forEach(function (el) {
+      var rect = null;
+      el.addEventListener('pointerenter', function () { rect = el.getBoundingClientRect(); });
+      el.addEventListener('pointermove', function (e) {
+        if (!rect) rect = el.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        var m = 5.5;
+        el.style.setProperty('--ry', ((px - 0.5) * 2 * m).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', (-(py - 0.5) * 2 * m).toFixed(2) + 'deg');
+        el.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+        el.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+      });
+      el.addEventListener('pointerleave', function () {
+        rect = null;
+        el.style.setProperty('--rx', '0deg');
+        el.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
+
   /* ---- magnetic CTA buttons ---- */
   if (finePointer && !reduce) {
     document.querySelectorAll('.btn-gold, .btn-primary').forEach(function (b) {
