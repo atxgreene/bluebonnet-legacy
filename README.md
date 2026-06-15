@@ -4,9 +4,18 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 
 ## Pages
 
-- `index.html` - public homepage from the `bluebonnetlegacy_site_v1` bundle.
-- `diagnostic.html` - Legacy Alignment Diagnostic one-pager from the Bluebonnet asset pack.
-- `brand.html` - compact production brand system for colors, typography, spacing, logo usage, and framework language.
+- `index.html` - hub homepage (hero, problem, links to the focused pages, who-it's-for, CTA).
+- `framework.html` - the Bluebonnet Alignment Framework™ (interactive flower + pillars + foundation).
+- `responsible-ai.html` - responsible agentic AI, plain-language definitions, and the Snakepit.dev deployment split.
+- `services.html` - the six service disciplines and outcomes.
+- `diagnostic.html` - the Legacy Alignment Diagnostic offer page (standalone, Tailwind).
+- `brand.html` - internal brand-system reference (not linked in the main nav).
+
+## Shared design system
+
+- `assets/site.css` - all shared styles: tokens, nav/footer, components, motion. Edit once here.
+- `assets/site.js` - shared interactions (reveals, nav + scroll progress, framework petal sync, drawer, motion), each guarded so the one file runs on every page.
+- Palette: Deep Navy `#10263D`, Bluebonnet Blue `#1F4E79`, Sage `#566B47`, Warm Ivory `#F7F3EA`, Muted Gold `#B89B5E`. Type: Cormorant Garamond (display) + Inter (body).
 
 ## Source Assets
 
