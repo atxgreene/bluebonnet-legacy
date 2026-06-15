@@ -1,6 +1,6 @@
 # Bluebonnet Legacy
 
-Static public site for Bluebonnet Legacy, a Texas-rooted operational transformation and acquisition platform.
+Static public site for Bluebonnet Legacy — a Texas-rooted practice for operational clarity, responsible AI, and practical business modernization.
 
 ## Pages
 
@@ -9,7 +9,6 @@ Static public site for Bluebonnet Legacy, a Texas-rooted operational transformat
 - `responsible-ai.html` - responsible agentic AI, plain-language definitions, and the Snakepit.dev deployment split.
 - `services.html` - the six service disciplines and outcomes.
 - `diagnostic.html` - the Legacy Alignment Diagnostic offer page (standalone, Tailwind).
-- `brand.html` - internal brand-system reference (not linked in the main nav).
 
 ## Shared design system
 
