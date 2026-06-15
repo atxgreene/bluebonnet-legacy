@@ -202,7 +202,7 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .flower-stage { position: relative; display: grid; place-items: center; }
 .flower { width: min(480px, 100%); }
 .petal { cursor: pointer; }
-.petal ellipse { transform-box: fill-box; transform-origin: center; fill: var(--blue); stroke: rgba(255,255,255,.14); stroke-width: 1.2; transition: fill .45s ease, opacity .45s ease, filter .45s ease; }
+.petal ellipse { transform-box: fill-box; transform-origin: center; fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 3; transition: fill .45s ease, opacity .45s ease, filter .45s ease; }
 .js .flower .petal ellipse { opacity: 0; transform: scale(.5); }
 .js .flower.drawn .petal ellipse { opacity: 1; transform: scale(1); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), fill .45s ease, filter .45s ease; }
 .petal.active ellipse { fill: var(--gold); filter: drop-shadow(0 0 14px rgba(184,155,94,.75)); }
