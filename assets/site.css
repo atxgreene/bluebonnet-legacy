@@ -308,6 +308,79 @@ footer { background: var(--navy-2); color: rgba(255,255,255,.66); padding: 60px 
 .sticky-cta { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; display: none; }
 .sticky-cta .btn { width: 100%; box-shadow: 0 12px 30px rgba(16,38,61,.4); }
 
+/* ============================================================
+   Liquid glass + 3D depth (site-wide)
+   Frosted surfaces, cursor tilt, drifting background, glossy CTAs.
+   ============================================================ */
+
+/* drifting "liquid" backdrop */
+body::before { inset: -25%; animation: bgDrift 26s ease-in-out infinite alternate; }
+@keyframes bgDrift {
+  0%   { transform: translate3d(-2%, -1%, 0) scale(1.06) rotate(0deg); }
+  50%  { transform: translate3d(2%, 2%, 0)   scale(1.13) rotate(1.4deg); }
+  100% { transform: translate3d(1%, -2%, 0)  scale(1.07) rotate(-1.1deg); }
+}
+
+/* frosted-glass cards with depth + cursor tilt */
+.teaser, .card, .svc {
+  position: relative;
+  background: linear-gradient(158deg, rgba(255,255,255,.80), rgba(252,250,244,.54));
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid rgba(255,255,255,.65);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.85),
+    inset 0 -1px 0 rgba(216,210,195,.35),
+    0 22px 44px -22px rgba(16,38,61,.34),
+    0 6px 16px -10px rgba(16,38,61,.18);
+  transform: perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(0,var(--ty,0),0);
+  transition: transform .45s cubic-bezier(.2,.8,.2,1), box-shadow .4s ease, border-color .3s ease;
+  will-change: transform;
+}
+.teaser:hover, .card:hover, .svc:hover {
+  --ty: -7px;
+  border-color: rgba(184,155,94,.5);
+  transform: perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translate3d(0,var(--ty),0);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.95),
+    0 36px 70px -28px rgba(16,38,61,.5),
+    0 12px 26px -14px rgba(16,38,61,.26);
+}
+
+/* moving specular sheen (position fed by --gx/--gy from JS) */
+.teaser::before, .card::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(260px circle at var(--gx,50%) var(--gy,-10%), rgba(255,255,255,.6), transparent 60%);
+  opacity: 0; transition: opacity .4s ease;
+}
+.teaser:hover::before, .card:hover::before { opacity: .85; }
+.svc::before { background: radial-gradient(circle, rgba(255,255,255,.5), transparent 60%); }
+
+/* small surfaces: frosted + specular edge */
+.client, .out {
+  background: linear-gradient(158deg, rgba(255,255,255,.74), rgba(252,250,244,.5));
+  -webkit-backdrop-filter: blur(10px) saturate(1.12);
+  backdrop-filter: blur(10px) saturate(1.12);
+  border-color: rgba(255,255,255,.6);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.75), 0 14px 28px -18px rgba(16,38,61,.3);
+}
+
+/* glossy "liquid" buttons with a sweeping sheen */
+.btn { position: relative; overflow: hidden; }
+.btn-primary { background: linear-gradient(180deg, #224A72, var(--navy)); box-shadow: 0 16px 34px rgba(16,38,61,.30), inset 0 1px 0 rgba(255,255,255,.16), inset 0 -3px 8px rgba(0,0,0,.22); }
+.btn-primary:hover { background: linear-gradient(180deg, #1B3C5E, var(--navy-2)); }
+.btn-gold { background: linear-gradient(180deg, #CDB27C, var(--gold)); box-shadow: 0 16px 34px rgba(184,155,94,.36), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -3px 8px rgba(120,96,40,.28); }
+.btn::before {
+  content: ""; position: absolute; top: -10%; left: 0; height: 120%; width: 55%;
+  background: linear-gradient(105deg, transparent, rgba(255,255,255,.45), transparent);
+  transform: translateX(-180%) skewX(-16deg); pointer-events: none;
+  transition: transform .75s cubic-bezier(.2,.8,.2,1);
+}
+.btn:hover::before { transform: translateX(320%) skewX(-16deg); }
+
+/* glass edge-light on the dark floating panels */
+.final-card, .command { box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.08); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .nav-links { display: none; }
