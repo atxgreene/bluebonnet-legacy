@@ -18,9 +18,9 @@ The copied source pack is stored in this repo under `assets/asset-pack/`. These 
 Implemented production follow-up from the asset-pack README:
 
 - Added simplified SVG mark and wordmark for active web usage.
-- Added `brand.html` as the compact brand system page.
+- Built, then retired, `brand.html`; the brand system now lives in `assets/site.css` and the live pages.
 - Standardized public brand architecture around Bluebonnet Legacy.
-- Standardized framework language across the public homepage and brand page.
+- Standardized framework language across the public homepage and pages.
 
 Homepage update:
 

@@ -153,9 +153,6 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .js .hero-flower .hpetal { opacity: 0; transform: scale(.35); }
 .js .hero-flower.bloom-in .hpetal { animation: hbloom .9s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: var(--d, 0s); }
 @keyframes hbloom { to { opacity: 1; transform: scale(1); } }
-.js .hero-flower .hstem { stroke-dasharray: 220; stroke-dashoffset: 220; }
-.js .hero-flower.bloom-in .hstem { animation: hdraw 1s ease forwards .35s; }
-@keyframes hdraw { to { stroke-dashoffset: 0; } }
 
 /* ---------- Masthead (sub-pages) ---------- */
 .masthead { position: relative; color: #fff; overflow: hidden;
@@ -336,5 +333,4 @@ footer { background: var(--navy-2); color: rgba(255,255,255,.66); padding: 60px 
   * { animation: none !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1 !important; transform: none !important; }
   .js .hero-flower .hpetal { opacity: 1 !important; transform: none !important; }
-  .js .hero-flower .hstem { stroke-dashoffset: 0 !important; }
 }
