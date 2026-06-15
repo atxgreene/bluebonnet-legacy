@@ -201,12 +201,13 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .fw-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(28px,4vw,56px); align-items: center; margin-top: 30px; }
 .flower-stage { position: relative; display: grid; place-items: center; }
 .flower { width: min(480px, 100%); }
-.petal { cursor: pointer; }
-.petal ellipse { transform-box: fill-box; transform-origin: center; fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 3; transition: fill .45s ease, opacity .45s ease, filter .45s ease; }
-.js .flower .petal ellipse { opacity: 0; transform: scale(.5); }
-.js .flower.drawn .petal ellipse { opacity: 1; transform: scale(1); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), fill .45s ease, filter .45s ease; }
-.petal.active ellipse { fill: var(--gold); filter: drop-shadow(0 0 14px rgba(184,155,94,.75)); }
-.flower.focused .petal:not(.active) ellipse { opacity: .42; }
+.petal { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: opacity .45s ease, filter .45s ease; }
+.petal use { fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 0.045; stroke-linejoin: round; transition: fill .45s ease; }
+.js .flower .petal { opacity: 0; transform: scale(.5); }
+.js .flower.drawn .petal { opacity: 1; transform: scale(1); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
+.petal.active use { fill: var(--gold); }
+.petal.active { filter: drop-shadow(0 0 12px rgba(184,155,94,.7)); }
+.flower.focused .petal:not(.active) { opacity: .42; }
 .pillars { display: grid; gap: 10px; }
 .pillar { width: 100%; text-align: left; cursor: pointer; color: #fff; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 16px 18px; display: grid; grid-template-columns: 26px 1fr; gap: 14px; align-items: center; transition: background .3s ease, border-color .3s ease, transform .3s ease; font-family: var(--sans); }
 .pillar:hover { background: rgba(255,255,255,.08); transform: translateX(3px); }
