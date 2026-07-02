@@ -1,20 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" role="img" aria-labelledby="t d">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 540" role="img" aria-labelledby="t d">
   <title id="t">Bluebonnet Legacy mark</title>
-  <desc id="d">A stylized Texas bluebonnet — pointed navy florets in a pyramid above two green leaves.</desc>
-  <defs>
-    <path id="bp" d="M0 -0.6 C0.42 -0.24 0.42 0.32 0.16 0.54 C0.07 0.62 -0.07 0.62 -0.16 0.54 C-0.42 0.32 -0.42 -0.24 0 -0.6 Z"/>
-  </defs>
-  <g transform="translate(256,250)" stroke="#F7F3EA" stroke-width="0.04" stroke-linejoin="round">
-    <rect x="-7" y="95" width="14" height="150" rx="7" fill="#445635" stroke="none"/>
-    <path d="M-6 104 C-72 80 -132 96 -162 132 C-120 158 -58 152 -6 122 Z" fill="#445635" stroke="none"/>
-    <path d="M6 104 C72 80 132 96 162 132 C120 158 58 152 6 122 Z" fill="#445635" stroke="none"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(0 -180) scale(88)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(0 -122) scale(108)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(-54 -74) rotate(-16) scale(100)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(54 -74) rotate(16) scale(100)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(0 -42) scale(122)" fill="#214E86"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(-64 16) rotate(-20) scale(116)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(64 16) rotate(20) scale(116)" fill="#1F4E79"/>
-    <use xlink:href="#bp" href="#bp" transform="translate(0 40) scale(138)" fill="#10263D"/>
+  <desc id="d">A stylized Texas bluebonnet — a compact cluster of navy florets above two sage leaves.</desc>
+  <g transform="translate(256,262)">
+        <path d="M0 118 L10 150 L-10 150 Z" fill="#445635"/>
+    <rect x="-5.5" y="130" width="11" height="80" rx="5.5" fill="#445635"/>
+    <g><path d="M4 140 C72 118 156 126 206 158 C154 190 62 184 4 162 Z" fill="#445635"/><path d="M16 150 C78 138 148 144 192 158" stroke="#F7F3EA" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".5"/></g>
+    <g transform="scale(-1 1)"><path d="M4 140 C72 118 156 126 206 158 C154 190 62 184 4 162 Z" fill="#445635"/><path d="M16 150 C78 138 148 144 192 158" stroke="#F7F3EA" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".5"/></g>
+        <path d="M-91.7 -134.6 C-53.0 -119.9 -26.9 -90.6 -16.6 -58.0 C-6.3 -25.5 -15.5 -5.8 -36.3 2.6 C-57.1 11.0 -77.3 3.2 -92.5 -27.3 C-107.7 -57.9 -109.3 -97.2 -91.7 -134.6 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M91.7 -134.6 C109.3 -97.2 107.7 -57.9 92.5 -27.3 C77.3 3.2 57.1 11.0 36.3 2.6 C15.5 -5.8 6.3 -25.5 16.6 -58.0 C26.9 -90.6 53.0 -119.9 91.7 -134.6 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M-125.6 -32.9 C-79.4 -23.3 -44.1 5.4 -25.6 40.5 C-7.1 75.6 -13.1 99.6 -34.4 112.9 C-55.8 126.3 -79.9 121.1 -103.4 89.1 C-126.9 57.1 -137.1 12.8 -125.6 -32.9 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M125.6 -32.9 C137.1 12.8 126.9 57.1 103.4 89.1 C79.9 121.1 55.8 126.3 34.4 112.9 C13.1 99.6 7.1 75.6 25.6 40.5 C44.1 5.4 79.4 -23.3 125.6 -32.9 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M0.0 -130.0 C30.4 -97.3 43.6 -54.3 40.9 -14.8 C38.3 24.8 22.4 42.0 0.0 42.0 C-22.4 42.0 -38.3 24.8 -40.9 -14.8 C-43.6 -54.3 -30.4 -97.3 0.0 -130.0 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M0.0 -204.0 C20.2 -184.2 29.0 -158.2 27.3 -134.3 C25.5 -110.4 15.0 -100.0 0.0 -100.0 C-15.0 -100.0 -25.5 -110.4 -27.3 -134.3 C-29.0 -158.2 -20.2 -184.2 0.0 -204.0 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
+    <path d="M24.4 -180.0 C32.8 -161.3 32.3 -140.4 25.5 -123.3 C18.7 -106.2 9.3 -100.8 -0.4 -104.0 C-10.1 -107.1 -14.4 -116.9 -9.9 -134.8 C-5.3 -152.7 6.5 -169.9 24.4 -180.0 Z" fill="#1E4470" stroke="#F7F3EA" stroke-width="8" stroke-linejoin="round" paint-order="stroke"/>
   </g>
 </svg>

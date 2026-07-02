@@ -9,6 +9,41 @@
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer = window.matchMedia('(pointer: fine)').matches;
 
+  /* ---- booking CTAs ----
+     Set BOOKING_URL to your Calendly event link (e.g.
+     'https://calendly.com/your-handle/diagnostic') and every element
+     with a data-book attribute opens the Calendly popup instead of
+     falling back to its mailto: link. Leave it '' to keep email CTAs. */
+  var BOOKING_URL = '';
+  if (BOOKING_URL) {
+    var calendlyReady = null;
+    var loadCalendly = function () {
+      if (calendlyReady) return calendlyReady;
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://assets.calendly.com/assets/external/widget.css';
+      document.head.appendChild(css);
+      calendlyReady = new Promise(function (resolve, reject) {
+        var s = document.createElement('script');
+        s.src = 'https://assets.calendly.com/assets/external/widget.js';
+        s.onload = resolve; s.onerror = reject;
+        document.head.appendChild(s);
+      });
+      return calendlyReady;
+    };
+    document.querySelectorAll('[data-book]').forEach(function (a) {
+      a.setAttribute('href', BOOKING_URL);
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        loadCalendly().then(function () {
+          window.Calendly.initPopupWidget({ url: BOOKING_URL });
+        }).catch(function () {
+          window.open(BOOKING_URL, '_blank', 'noopener');
+        });
+      });
+    });
+  }
+
   /* ---- scroll reveal ---- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

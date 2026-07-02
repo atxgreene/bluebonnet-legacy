@@ -164,6 +164,9 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .masthead .crumb { font-size: .8rem; color: rgba(255,255,255,.55); margin-bottom: 14px; letter-spacing: .02em; }
 .masthead .crumb a:hover { color: #fff; }
 
+/* ---------- Problem section (homepage) ---------- */
+.problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,5vw,70px); align-items: center; }
+
 /* ---------- Section heads / surfaces ---------- */
 .section-head { max-width: 760px; margin-bottom: 40px; }
 .section-head.center { margin-inline: auto; text-align: center; }
@@ -199,10 +202,10 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .flower-stage { position: relative; display: grid; place-items: center; }
 .flower { width: min(480px, 100%); }
 .petal { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: opacity .45s ease, filter .45s ease; }
-.petal use { fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 0.045; stroke-linejoin: round; transition: fill .45s ease; }
+.petal path { fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 8; stroke-linejoin: round; paint-order: stroke; transition: fill .45s ease; }
 .js .flower .petal { opacity: 0; transform: scale(.5); }
 .js .flower.drawn .petal { opacity: 1; transform: scale(1); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
-.petal.active use { fill: var(--gold); }
+.petal.active path { fill: var(--gold); }
 .petal.active { filter: drop-shadow(0 0 12px rgba(184,155,94,.7)); }
 .flower.focused .petal:not(.active) { opacity: .42; }
 .pillars { display: grid; gap: 10px; }
@@ -388,7 +391,7 @@ body::before { inset: -25%; animation: bgDrift 26s ease-in-out infinite alternat
   .nav-cta .btn:not(.menu-btn) { display: none; }
   .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 92px 0 76px; }
   .hero-visual { margin-top: 30px; }
-  .fw-grid, .ai-layout { grid-template-columns: 1fr; }
+  .fw-grid, .ai-layout, .problem-grid { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; }
   .teasers, .svc-grid { grid-template-columns: 1fr 1fr; }
   .client-grid { grid-template-columns: 1fr 1fr; }
