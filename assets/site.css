@@ -384,25 +384,94 @@ body::before { inset: -25%; animation: bgDrift 26s ease-in-out infinite alternat
 /* glass edge-light on the dark floating panels */
 .final-card, .command { box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.08); }
 
+/* ---------- Touch feedback ---------- */
+a, button { -webkit-tap-highlight-color: transparent; }
+@media (hover: none) {
+  .btn:active { transform: scale(.97); transition-duration: .12s; }
+  .teaser:active, .card:active, .svc:active, .client:active, .out:active, .pillar:active { transform: scale(.985); transition-duration: .12s; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
   .nav-links { display: none; }
   .menu-btn { display: flex; }
   .nav-cta .btn:not(.menu-btn) { display: none; }
-  .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 92px 0 76px; }
-  .hero-visual { margin-top: 30px; }
-  .fw-grid, .ai-layout, .problem-grid { grid-template-columns: 1fr; }
-  .split { grid-template-columns: 1fr; }
-  .teasers, .svc-grid { grid-template-columns: 1fr 1fr; }
-  .client-grid { grid-template-columns: 1fr 1fr; }
-  .out-grid { grid-template-columns: 1fr 1fr; }
+  .hero-inner { grid-template-columns: 1fr; min-height: auto; padding: 88px 0 64px; }
+  .hero-visual { margin-top: 26px; }
+  .fw-grid, .ai-layout, .problem-grid, .grid-3, .split { grid-template-columns: 1fr; }
+  .teasers, .svc-grid, .client-grid, .out-grid { grid-template-columns: 1fr 1fr; }
+  .drawer-panel { padding-bottom: calc(26px + env(safe-area-inset-bottom)); }
+
+  /* calm the GPU on touch-class devices: no drifting backdrop, no frosted blur */
+  body::before { animation: none; }
+  .teaser, .card, .svc {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    background: linear-gradient(158deg, rgba(255,255,255,.94), rgba(252,250,244,.88));
+  }
+  .client, .out {
+    -webkit-backdrop-filter: none; backdrop-filter: none;
+    background: linear-gradient(158deg, rgba(255,255,255,.92), rgba(252,250,244,.86));
+  }
 }
 @media (max-width: 620px) {
   body { font-size: 16px; }
-  .teasers, .svc-grid, .client-grid, .out-grid { grid-template-columns: 1fr; }
-  .sticky-cta { display: block; }
-  footer { padding-bottom: 90px; }
-  .foot-grid { flex-direction: column; }
+  section { padding: 60px 0; }
+  .section-head { margin-bottom: 28px; }
+  .eyebrow { font-size: .68rem; letter-spacing: .18em; }
+
+  /* hero: tighter rhythm, thumb-first CTAs */
+  .hero-inner { padding: 60px 0 52px; }
+  .hero .lede { margin-top: 16px; max-width: none; }
+  .hero-actions { margin-top: 26px; }
+  .hero-actions .btn { width: 100%; }
+  .hero-meta { margin-top: 24px; gap: 10px 18px; font-size: .78rem; }
+  .hero-visual { margin-top: 30px; }
+  .hero-flower { width: min(230px, 64%); }
+  .hero-glow { animation: none; opacity: .8; }
+  .scroll-cue { display: none; }
+
+  /* sub-page mastheads: less empty dark space */
+  .masthead-inner { padding: 60px 0 44px; }
+
+  /* framework flower sized to support, not dominate */
+  .flower { width: min(300px, 84%); margin-inline: auto; }
+  .foundation .btn { width: 100%; }
+
+  /* single-column card flows */
+  .teasers, .svc-grid { grid-template-columns: 1fr; margin-top: 30px; }
+  .card { padding: 24px; }
+  .teaser { padding: 26px; }
+  .svc { padding: 24px; }
+
+  /* compact chip walls instead of long single-column stacks */
+  .client-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .client { padding: 14px; gap: 10px; border-radius: 12px; }
+  .client b { font-size: .84rem; }
+  .client svg { width: 18px; height: 18px; }
+  .out-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .out { padding: 14px; border-radius: 12px; }
+  .out b { font-size: .84rem; }
+  .out svg { width: 16px; height: 16px; margin-bottom: 8px; }
+
+  /* problem section: lead with the words, not the diagram */
+  .align-viz { display: none; }
+
+  /* final CTA card */
+  .final-card { padding: 40px 24px; }
+  .final-actions { margin-top: 26px; }
+  .final-actions .btn { width: 100%; }
+
+  /* footer: side-by-side link columns, then meta */
+  .foot-grid { flex-direction: column; gap: 30px; }
+  .foot-cols { gap: 28px 44px; }
+  .foot-bottom { margin-top: 30px; flex-direction: column; gap: 6px; }
+  footer { padding: 48px 0 40px; padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
+
+  /* sticky booking CTA rides above the home indicator */
+  .sticky-cta { display: block; left: 14px; right: 14px; bottom: calc(12px + env(safe-area-inset-bottom)); }
+
+  /* gentler motion on small screens */
+  .js .reveal { transform: translateY(14px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
