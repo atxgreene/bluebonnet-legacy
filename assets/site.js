@@ -60,6 +60,7 @@
   /* ---- nav state + scroll progress ---- */
   var nav = document.getElementById('nav');
   var sb = document.getElementById('scrollbar');
+  var stickyCta = document.querySelector('.sticky-cta');
   var onScroll = function () {
     var y = window.scrollY || document.documentElement.scrollTop;
     if (nav) nav.classList.toggle('scrolled', y > 12);
@@ -67,6 +68,7 @@
       var h = document.documentElement.scrollHeight - window.innerHeight;
       sb.style.width = (h > 0 ? (y / h) * 100 : 0) + '%';
     }
+    if (stickyCta) stickyCta.classList.toggle('show', y > window.innerHeight * 0.7);
   };
   onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
