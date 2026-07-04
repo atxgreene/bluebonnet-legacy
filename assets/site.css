@@ -203,7 +203,7 @@ section { padding: clamp(72px, 11vh, 130px) 0; position: relative; }
 .flower { width: min(480px, 100%); }
 .petal { cursor: pointer; transform-box: fill-box; transform-origin: center; transition: opacity .45s ease, filter .45s ease; }
 .petal path { fill: var(--blue); stroke: rgba(247,243,234,.6); stroke-width: 8; stroke-linejoin: round; paint-order: stroke; transition: fill .45s ease; }
-.petal path.spot { fill: rgba(247,243,234,.9); stroke: none; }
+.petal path.spot, .petal.active path.spot { fill: rgba(247,243,234,.9); stroke: none; }
 .js .flower .petal { opacity: 0; transform: scale(.5); }
 .js .flower.drawn .petal { opacity: 1; transform: scale(1); transition: opacity .6s ease, transform .7s cubic-bezier(.2,.8,.2,1), filter .45s ease; }
 .petal.active path { fill: var(--gold); }
