@@ -203,6 +203,76 @@
       </div>
     </section>
 
+
+    <!-- PRIVATE SIGNAL DESK: hidden unless opened with #bet-of-day, ?signals=1, or ?bet=day -->
+    <section class="signal-desk" id="bet-of-day" data-private-section hidden aria-label="Private operator signal desk">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow light">Private operator signal desk</p>
+          <h2 class="h2" style="margin-top:14px">Bet of the day — formatted as a research parlay.</h2>
+          <p>Internal research-only board for Austin. These are prediction-market contract combinations, not financial advice, and should be price-checked live before any action.</p>
+        </div>
+
+        <div class="parlay-grid">
+          <article class="parlay-card featured reveal">
+            <div class="parlay-card-header">
+              <span class="signal-label">High-confidence core</span>
+              <strong>Approx. 66.2% implied</strong>
+            </div>
+            <h3>France advances + Morocco advances</h3>
+            <ol class="leg-list">
+              <li><span>France advances</span><strong>Robinhood/Kalshi ask ~92¢</strong></li>
+              <li><span>Morocco advances</span><strong>Robinhood/Kalshi ask ~72¢</strong></li>
+            </ol>
+            <p>Cleanest two-game survival ticket. Avoids forcing Morocco to win in regulation.</p>
+          </article>
+
+          <article class="parlay-card reveal d1">
+            <div class="parlay-card-header">
+              <span class="signal-label">Conservative</span>
+              <strong>Approx. 84.6% implied</strong>
+            </div>
+            <h3>France advances + Canada/Morocco over 0.5 goals</h3>
+            <ol class="leg-list">
+              <li><span>France advances</span><strong>Robinhood/Kalshi ask ~92¢</strong></li>
+              <li><span>Canada/Morocco over 0.5 goals</span><strong>Robinhood/Kalshi ask ~92¢</strong></li>
+            </ol>
+            <p>Lower payout but highest confidence from the Saturday board.</p>
+          </article>
+
+          <article class="parlay-card reveal d2">
+            <div class="parlay-card-header">
+              <span class="signal-label">Polymarket-only</span>
+              <strong>Approx. 67.2% implied</strong>
+            </div>
+            <h3>France regulation win + Canada does not win</h3>
+            <ol class="leg-list">
+              <li><span>France regulation win</span><strong>Polymarket ask ~83¢</strong></li>
+              <li><span>Canada “No” in regulation</span><strong>Polymarket implied ~81¢</strong></li>
+            </ol>
+            <p>Best synthetic Polymarket version if staying inside Polymarket contracts.</p>
+          </article>
+
+          <article class="parlay-card reveal d3">
+            <div class="parlay-card-header">
+              <span class="signal-label">Upside</span>
+              <strong>Approx. 44.0% implied</strong>
+            </div>
+            <h3>France regulation win + Morocco regulation win</h3>
+            <ol class="leg-list">
+              <li><span>France regulation win</span><strong>Polymarket ask ~83¢</strong></li>
+              <li><span>Morocco regulation win</span><strong>Polymarket/Kalshi ask ~53¢</strong></li>
+            </ol>
+            <p>Clean favorites-in-90 ticket, but Morocco regulation is the weak link.</p>
+          </article>
+        </div>
+
+        <aside class="signal-note reveal">
+          <strong>Operator rule:</strong> If Robinhood offers France advances + Morocco advances worse than ~66–68¢ combined, split the legs or pass. Refresh prices before entry; these lines were captured 2026-07-03 23:47 CDT.
+        </aside>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section aria-label="Get started">
       <div class="wrap">

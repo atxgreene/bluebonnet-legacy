@@ -407,3 +407,93 @@ body::before { inset: -25%; animation: bgDrift 26s ease-in-out infinite alternat
   .js .reveal { opacity: 1 !important; transform: none !important; }
   .js .hero-flower .hpetal { opacity: 1 !important; transform: none !important; }
 }
+
+
+.signal-desk {
+  padding: clamp(70px, 9vw, 120px) 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(201, 169, 106, 0.22), transparent 28%),
+    linear-gradient(135deg, #0B1D2C 0%, #10263D 48%, #173A5E 100%);
+  color: white;
+}
+
+.signal-desk .h2,
+.signal-desk h3 { color: white; }
+.signal-desk .section-head p:not(.eyebrow),
+.signal-desk .parlay-card p { color: rgba(255,255,255,.74); }
+
+.parlay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.parlay-card {
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 22px 70px rgba(0,0,0,.18);
+}
+
+.parlay-card.featured {
+  border-color: rgba(201,169,106,.62);
+  background: rgba(201,169,106,.13);
+}
+
+.parlay-card-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 18px;
+  color: rgba(255,255,255,.82);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.signal-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(201,169,106,.44);
+  border-radius: 999px;
+  color: #E8D49A;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.leg-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.leg-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.leg-list span { color: rgba(255,255,255,.82); }
+.leg-list strong { color: white; text-align: right; }
+
+.signal-note {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(201,169,106,.4);
+  border-radius: 18px;
+  background: rgba(201,169,106,.1);
+  color: rgba(255,255,255,.82);
+}
+
+@media (max-width: 860px) {
+  .parlay-grid { grid-template-columns: 1fr; }
+  .parlay-card-header, .leg-list li { align-items: flex-start; flex-direction: column; }
+  .leg-list strong { text-align: left; }
+}
