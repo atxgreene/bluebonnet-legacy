@@ -193,21 +193,3 @@
   }
 })();
 
-
-function revealPrivateSignalDesk() {
-  const panel = document.querySelector('[data-private-section]');
-  if (!panel) return;
-
-  const params = new URLSearchParams(window.location.search);
-  const shouldReveal =
-    window.location.hash === '#bet-of-day' ||
-    params.get('signals') === '1' ||
-    params.get('bet') === 'day';
-
-  if (shouldReveal) {
-    panel.hidden = false;
-  }
-}
-
-document.addEventListener('DOMContentLoaded', revealPrivateSignalDesk);
-window.addEventListener('hashchange', revealPrivateSignalDesk);
